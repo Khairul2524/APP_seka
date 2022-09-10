@@ -35,7 +35,7 @@ class Database extends Config
         'hostname' => 'localhost',
         'username' => 'root',
         'password' => '',
-        'database' => 'bansos',
+        'database' => 'seka',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
