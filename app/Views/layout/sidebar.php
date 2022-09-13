@@ -1,75 +1,55 @@
-<aside id="sidebar" class="sidebar">
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url('/dashboard') ?>">
+                <i class="icon-grid menu-icon"></i>
+                <span class="menu-title">Dashboard</span>
+            </a>
+        </li>
 
-    <ul class="sidebar-nav" id="sidebar-nav">
-
         <li class="nav-item">
-            <a class="nav-link collapsed" href="<?= base_url('/') ?>">
-                <i class="bi bi-grid"></i>
-                <span>Dashboard</span>
+            <a class="nav-link" data-toggle="collapse" href="#form-karyawan" aria-expanded="false" aria-controls="form-karyawan">
+                <i class="icon-head menu-icon"></i>
+                <span class="menu-title">Karyawan</span>
+                <i class="menu-arrow"></i>
             </a>
-        </li><!-- End Dashboard Nav -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#perhitungan" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-calculator"></i><span>Perhitungan</span><i class="bi bi-chevron-down ms-auto"></i>
-            </a>
-            <ul id="perhitungan" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                <li>
-                    <a href="<?= base_url('/perhitungan') ?>">
-                        <i class="bi bi-circle"></i><span>Aras</span>
-                    </a>
-                    <a href="<?= base_url('/pdf') ?>">
-                        <i class="bi bi-circle"></i><span>Download File</span>
-                    </a>
-                </li>
-            </ul>
+            <div class="collapse" id="form-karyawan">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"><a class="nav-link" href="<?= base_url('/penduduk') ?>">Karyawan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= base_url('/penduduk/form') ?>">Form Karyawan</a></li>
+                </ul>
+            </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#penduduk" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-people"></i><span>Penduduk</span><i class="bi bi-chevron-down ms-auto"></i>
-            </a>
-            <ul id="penduduk" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                <li>
-                    <a href="<?= base_url('/penduduk') ?>">
-                        <i class="bi bi-circle"></i><span>Data Penduduk</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?= base_url('/penduduk/form') ?>">
-                        <i class="bi bi-circle"></i><span>Tambah Penduduk</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="<?= base_url('/kriteria') ?>">
-                <i class="bi bi-bookshelf"></i>
-                <span>Kriteria</span>
+            <a class="nav-link" href="<?= base_url('/kriteria') ?>">
+                <i class="icon-layers menu-icon"></i>
+                <span class="menu-title">Kriteria</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="<?= base_url('/bobot') ?>">
-                <i class="bi bi-star-fill"></i>
-                <span>Bobot</span>
+            <a class="nav-link" href="<?= base_url('/bobot') ?>">
+                <i class="icon-grid menu-icon"></i>
+                <span class="menu-title">Bobot</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-person-bounding-box"></i><span>Manajemen User</span><i class="bi bi-chevron-down ms-auto"></i>
+            <a class="nav-link" href="<?= base_url('/perhitungan') ?>">
+                <i class="icon-plus menu-icon"></i>
+                <span class="menu-title">Perhitungan</span>
             </a>
-            <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                <li>
-                    <a href="<?= base_url('/user') ?>">
-                        <i class="bi bi-circle"></i><span>Users</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?= base_url('/level') ?>">
-                        <i class="bi bi-circle"></i><span>Level</span>
-                    </a>
-                </li>
-            </ul>
-        </li><!-- End Icons Nav -->
-
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+                <i class="icon-head menu-icon"></i>
+                <span class="menu-title">Manajemen User</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="form-elements">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"><a class="nav-link" href="<?= base_url('/user') ?>">User</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= base_url('/level') ?>">Level</a></li>
+                </ul>
+            </div>
+        </li>
     </ul>
-
-</aside>
+</nav>

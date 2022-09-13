@@ -12,7 +12,7 @@ class Home extends BaseController
     }
     public function dashboard()
     {
-        return view('layout/page_layout');
+        return view('admin/dashboard.php');
     }
     public function login()
     {

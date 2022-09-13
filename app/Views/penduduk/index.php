@@ -1,70 +1,62 @@
 <?= $this->extend('layout/page_layout') ?>
 
 <?= $this->section('content') ?>
-<div class="pagetitle">
-    <h1>User</h1>
-    <nav>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Penduduk</a></li>
-        </ol>
-    </nav>
-</div><!-- End Page Title -->
-
-<section class="section">
+<div class="content-wrapper">
     <div class="row">
-
-        <div class="col-lg-12">
-
+        <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
-
                 <div class="card-body">
-                    <h5 class="card-title">List Penduduk</h5>
-
-                    <table class="table table-hover ">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Nama </th>
-                                <th scope="col">No KK </th>
-                                <th scope="col">Alamat</th>
-                                <th scope="col">Jenis Kelamin</th>
-                                <th scope="col">Agama</th>
-                                <th scope="col">Status Perkawinan</th>
-                                <th scope="col">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $no = 1;
-                            foreach ($penduduk as $row) {
-                            ?>
+                    <h4 class="card-title">Karyawan</h4>
+                    <div class="table-responsive">
+                        <table class="table table-hover ">
+                            <thead>
                                 <tr>
-                                    <th scope="row"><?= $no++ ?></th>
-                                    <td><?= $row['nama'] ?></td>
-                                    <td><?= $row['no_kk'] ?></td>
-                                    <td><?= $row['alamat'] ?></td>
-                                    <td><?php
-                                        if ($row['jenis_kelamin'] ==  1) {
-                                            echo "Laki-Laki";
-                                        } else {
-                                            echo "Perempuan";
-                                        }
-                                        ?></td>
-                                    <td><?= $row['agama'] ?></td>
-                                    <td><?= $row['status_perkawinan'] ?></td>
-                                    <td>
-                                        <button type="button" class="btn btn-outline-warning tombol-ubah" data-bs-toggle="modal" data-bs-target="#basicModal" data-id="<?= $row['id_penduduk'] ?>">Ubah</button>
-                                        <a href="<?= site_url("/penduduk/" . $row['id_penduduk'] . "/delete")   ?>" type="button" class="btn btn-outline-danger">Hapus</a>
-                                    </td>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nama </th>
+                                    <th scope="col">No KK </th>
+                                    <th scope="col">Alamat</th>
+                                    <th scope="col">Jenis Kelamin</th>
+                                    <th scope="col">Agama</th>
+                                    <th scope="col">Status Perkawinan</th>
+                                    <th scope="col">Aksi</th>
                                 </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $no = 1;
+                                foreach ($penduduk as $row) {
+                                ?>
+                                    <tr>
+                                        <th scope="row"><?= $no++ ?></th>
+                                        <td><?= $row['nama'] ?></td>
+                                        <td><?= $row['no_kk'] ?></td>
+                                        <td><?= $row['alamat'] ?></td>
+                                        <td><?php
+                                            if ($row['jenis_kelamin'] ==  1) {
+                                                echo "Laki-Laki";
+                                            } else {
+                                                echo "Perempuan";
+                                            }
+                                            ?></td>
+                                        <td><?= $row['agama'] ?></td>
+                                        <td><?= $row['status_perkawinan'] ?></td>
+                                        <td>
+                                            <button type="button" class="btn btn-outline-warning tombol-ubah" data-bs-toggle="modal" data-bs-target="#basicModal" data-id="<?= $row['id_penduduk'] ?>">Ubah</button>
+                                            <a href="<?= site_url("/penduduk/" . $row['id_penduduk'] . "/delete")   ?>" type="button" class="btn btn-outline-danger">Hapus</a>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>
+
+
+
 <div class="modal fade" id="basicModal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">

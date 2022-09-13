@@ -1,6 +1,6 @@
-<footer id="footer" class="footer">
-    <div class="copyright">
-        &copy; Copyright <strong><span>Baiq Dea</span></strong>. All Rights Reserved
-    </div>
+<footer class="footer">
+    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © APP Seka. All rights reserved.</span>
 
+    </div>
 </footer>
