@@ -1,26 +1,13 @@
 <?= $this->extend('layout/page_layout') ?>
 
 <?= $this->section('content') ?>
-<div class="pagetitle">
-    <h1>Kriteria</h1>
-    <nav>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="">Kriteria</a></li>
-        </ol>
-    </nav>
-</div><!-- End Page Title -->
-
-<section class="section">
+<div class="content-wrapper">
     <div class="row">
-
         <div class="col-lg-12">
-
             <div class="card">
-
                 <div class="card-body">
                     <h5 class="card-title">List Kriteria </h5>
-                    <!-- Basic Modal -->
-                    <button type="button" class="btn btn-primary tombol-tambah" data-bs-toggle="modal" data-bs-target="#basicModal">
+                    <button type="button" class="btn btn-primary tombol-tambah" data-toggle="modal" data-target="#exampleModal">
                         Tambah Kriteria
                     </button>
 
@@ -45,7 +32,7 @@
                                     <td><?= $row['jenis'] ?></td>
                                     <td><?= $row['bobot'] ?></td>
                                     <td>
-                                        <button type="button" class="btn btn-outline-warning tombol-ubah" data-bs-toggle="modal" data-bs-target="#basicModal" data-id="<?= $row['id_kriteria'] ?>">Ubah</button>
+                                        <button type="button" class="btn btn-outline-warning tombol-ubah" data-toggle="modal" data-target="#exampleModal" data-id="<?= $row['id_kriteria'] ?>">Ubah</button>
                                         <a href="<?= site_url("/kriteria/" . $row['id_kriteria'] . "/delete")   ?>" type="button" class="btn btn-outline-danger">Hapus</a>
                                     </td>
                                 </tr>
@@ -56,15 +43,17 @@
             </div>
         </div>
     </div>
-</section>
+</div>
 
-<div class="modal fade" id="basicModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form class="g-3" action="<?= site_url('/kriteria/add') ?>" method="POST">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <form action="<?= site_url('/kriteria/add') ?>" method="POST">
+            <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Tambah Kriteria</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -90,10 +79,15 @@
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
-</div><!-- End Basic Modal-->
+
+</div>
+
+
+
+
 <script>
     $(function() {
         // tambah

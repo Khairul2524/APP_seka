@@ -1,16 +1,7 @@
 <?= $this->extend('layout/page_layout') ?>
 
 <?= $this->section('content') ?>
-<div class="pagetitle">
-    <h1>User</h1>
-    <nav>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Bobot</a></li>
-        </ol>
-    </nav>
-</div><!-- End Page Title -->
-
-<section class="section">
+<div class="content-wrapper">
     <div class="row">
 
         <div class="col-lg-12">
@@ -19,7 +10,7 @@
 
                 <div class="card-body">
                     <h5 class="card-title">List Bobot</h5>
-                    <button type="button" class="btn btn-primary tombol-tambah" data-bs-toggle="modal" data-bs-target="#basicModal">
+                    <button type="button" class="btn btn-primary tombol-tambah" data-toggle="modal" data-target="#exampleModal">
                         Tambah Bobot
                     </button>
                     <table class="table table-hover ">
@@ -43,7 +34,7 @@
                                     <td><?= $row['keterangan'] ?></td>
                                     <td><?= $row['nilai'] ?></td>
                                     <td>
-                                        <button type="button" class="btn btn-outline-warning tombol-ubah" data-bs-toggle="modal" data-bs-target="#basicModal" data-id="<?= $row['id_bobot'] ?>">Ubah</button>
+                                        <button type="button" class="btn btn-outline-warning tombol-ubah" data-toggle="modal" data-target="#exampleModal" data-id="<?= $row['id_bobot'] ?>">Ubah</button>
                                         <a href="<?= site_url("/bobot/" . $row['id_bobot'] . "/delete")   ?>" type="button" class="btn btn-outline-danger">Hapus</a>
                                     </td>
                                 </tr>
@@ -54,14 +45,16 @@
             </div>
         </div>
     </div>
-</section>
-<div class="modal fade" id="basicModal" tabindex="-1">
-    <div class="modal-dialog">
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <form class="g-3" action="<?= site_url('/bobot/add') ?>" method="POST">
                 <div class="modal-header">
-                    <h5 class="modal-title">Tambah Kriteria</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -93,8 +86,10 @@
                 </div>
             </form>
         </div>
+
     </div>
-</div><!-- End Basic Modal-->
+</div>
+
 <script>
     $(function() {
         // tambah

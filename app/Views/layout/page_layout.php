@@ -21,6 +21,7 @@
     <!-- endinject -->
     <link rel="shortcut icon" href="<?= base_url() ?>/images/favicon.png" />
     <script src="<?= base_url() ?>/js/jquery-3.5.1.min.js"></script>
+
 </head>
 
 <body>
